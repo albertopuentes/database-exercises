@@ -2,8 +2,8 @@
 use albums_db;
 
 # Exercise 3
-describe albums;
-# (a) 6 rows
+from albums;
+# (a) 31 rows
 
 select distinct artist
 from albums;
@@ -36,14 +36,13 @@ where name = 'Nevermind';
 
 select name
 from albums
-where release_date between 1989 and 2000;
+where release_date between 1990 and 2000;
 
 # (d) The Bodyguard
 # Jagged Little Pill
 # Come On Over
 # Falling into You
 # Let's Talk About Love
-# 1
 # Dangerous
 # The Immaculate Collection
 # Titanic: Music from the Motion Picture
