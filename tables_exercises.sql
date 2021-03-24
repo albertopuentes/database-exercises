@@ -5,6 +5,14 @@ ShoW DatAbases;
 use employees;
 select database();
 show tables;
+# current_dept_emp
+departments
+dept_emp
+dept_emp_latest_date
+dept_manager
+employees
+salaries
+titles
 
 -- Question 10 -- 
 
