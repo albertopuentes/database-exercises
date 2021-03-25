@@ -1,17 +1,20 @@
 
 # Exercise 2
 
-SELECT DISTINCT title FROM titles
-order by title desc
+SELECT DISTINCT last_name FROM employees
+order by last_name desc
 limit 10;
 
-# Technique Leader
-# Staff
-# Senior Staff
-# Senior Engineer
-# Manager
-# Engineer
-# Assistant Engineer
+# Zykh
+# Zyda
+# Zwicker
+# Zweizig
+ Zumaque
+# Zultner
+# Zucker
+# Zuberek
+# Zschoche
+# Zongker
 
 # Exercise 3
 select first_name, last_name
