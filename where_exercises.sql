@@ -1,4 +1,4 @@
-use employees;
+uuse employees;
 
 # Where Exercises
 
@@ -8,11 +8,17 @@ from employees
 where first_name in ('irena', 'vidya', 'maya');
 #709 records returned
 
-# Exercise 4
+# Exercise 3
 select *
 from employees
 where first_name = 'irena' or first_name = 'vidya' or first_name = 'maya';
 # 709 records returned
+
+# Exercise 4
+select *
+from employees
+where gender = 'm' and (first_name = 'irena' or first_name = 'vidya' or first_name = 'maya');
+# 441 records returned
 
 # Exercise 5
 select *
@@ -24,7 +30,12 @@ where last_name like 'e%';
 select *
 from employees
 where last_name like 'e%' or last_name like '%e';
-# 30723 records returned
+
+select *
+from employees
+where last_name not like 'e%' and last_name like '%e';
+# 30723 employee last names starts or ends with 'e'
+# 23393 employee last names end with 'e' but don't start with 'e'
 
 # Exercise 7
 select *
@@ -48,14 +59,14 @@ where hire_date between '1990-01-01' and '1999-12-31';
 # Exercise 9
 select emp_no
 from employees
-where hire_date like '%%%%-12-25';
-# 789 employees hired on Christmas Day
+where birth_date like '%%%%-12-25';
+# 842 employees born on Christmas Day
 
 # Exercise 10
 
 select emp_no
 from employees
-where hire_date between '1990-01-01' and '1999-12-31' and birth_date like '%%%%-12-25';''
+where hire_date between '1990-01-01' and '1999-12-31' and birth_date like '%%%%-12-25';
 # 362 employees hired in 90s and on Christmas Day
 
 # Exercise 11
@@ -69,4 +80,3 @@ select emp_no
 from employees
 where last_name like '%q%' and last_name not like '%qu%';
 # 547 employees have 'q' in last name but not 'qu'
-
