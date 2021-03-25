@@ -1,4 +1,4 @@
-uuse employees;
+use employees;
 
 # Where Exercises
 
