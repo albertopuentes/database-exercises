@@ -1,11 +1,12 @@
 
 # Exercise 2
-select concat(first_name, ' ', last_name)
+select concat(first_name, ' ', last_name) as full_name
 from employees
 where last_name like 'e%e'; 
 
 # Exercise 3
 select upper(concat(first_name, ' ', last_name))
+as full_name
 from employees
 where last_name like 'e%e'; 
 
@@ -18,11 +19,13 @@ where hire_date like '199%' and birth_date like '%-12-25';
 # Exercise 5
 
 select max(salary)
-from salaries;
+from salaries
+where to_date like '9999%';
 # 158220
 
 select min(salary)
 from salaries;
+where to date like '9999%';
 # 38623
 
 # Exercise 6
