@@ -16,6 +16,11 @@ order by first_name asc, last_name asc;
 # my first result was Irena Acton
 # my last result was Vidya Zweizig
 
+#Find all employees with first names 'Irena', 'Vidya', or 'Maya', 
+# and order your results returned by last name and then first name. 
+# In your comments, answer: What was the first and last name in the first row of the results? 
+# What was the first and last name of the last person in the table?
+
 # Exercise 4
 select *
 from employees
@@ -29,7 +34,7 @@ select *
 from employees
 where last_name like 'e%e'
 order by emp_no;
-# 899 employees returned
+# 899 employees returneds
 # first emp_no is 10021 and is Ramzi Erde
 # Last emp_no is 499648 and is Tadahiro Erde
 
