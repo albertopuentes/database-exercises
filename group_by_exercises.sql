@@ -56,6 +56,7 @@ select gender, first_name, count(first_name)
 from employees
 where first_name in ('irena', 'vidya', 'maya')
 group by gender, first_name
+
 # 
 # M	Irena	144
 # M	Maya	146
@@ -67,6 +68,7 @@ group by gender, first_name
 # Exercise 8
 
 select lower(concat(
-substr(first_name, 1, 1), substr(last_name, 1, 4), '_', substr(birth_date, 6, 2), substr(birth_date, 3, 2))) as username, count(*) as 'count_employees'
+substr(first_name, 1, 1), substr(last_name, 1, 4), '_', substr(birth_date, 6, 2), substr(birth_date, 3, 2))) as username, count(*) as count_employees
 from employees
-group by username;
+group by username
+having count_employees > 1;
