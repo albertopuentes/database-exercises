@@ -67,6 +67,6 @@ group by gender, first_name
 # Exercise 8
 
 select lower(concat(
-substr(first_name, 1, 1), substr(last_name, 1, 4), '_', substr(birth_date, 6, 2), substr(birth_date, 3, 2))) as 'username', first_name, last_name, birth_date, count(*) as 'count_employees'
+substr(first_name, 1, 1), substr(last_name, 1, 4), '_', substr(birth_date, 6, 2), substr(birth_date, 3, 2))) as username, count(*) as 'count_employees'
 from employees
-group by emp_no;
+group by username;
