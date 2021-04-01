@@ -1,4 +1,5 @@
 
+
 -- Exercise 1
 SELECt first_name, last_name, hire_date FROM employees join dept_emp using (emp_no)
 WHERE hire_date = (
