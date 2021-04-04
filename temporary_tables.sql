@@ -32,3 +32,36 @@ CREATE TEMPORARY TABLE sakila_exercise AS
 	FROM sakila.payment AS sp
 	
 ALTER TABLE sakila_exercise MODIFY cents INT NOT NULL;	
+
+-- Exercise 3
+-- Sales is the best department to work for in terms of Salary Zscore and Human Resources is worst
+
+Create Temporary Table Zscore as
+select emp_no, salary, dept_name
+from employees.salaries
+join employees.dept_emp using (emp_no)
+join employees.departments using (dept_no)
+where salaries.to_date = '9999-01-01'
+
+Create Temporary Table Historics as 
+select avg(salary) as AvgSalary, stddev(salary) as StdSalary
+from employees.salaries
+
+drop table Zcalc;
+
+create temporary table Zcalc as
+select dept_name, avg(salary) as Average 
+from Zscore
+group by dept_name
+
+alter table Zcalc add AvgSalary INT;
+alter table Zcalc add StdSalary INT;
+alter table Zcalc add Zscore Decimal(10,2);
+Update Zcalc Set AvgSalary = (select AvgSalary from Historics);
+update Zcalc set StdSalary = (select StdSalary from Historics);
+Update Zcalc set ZScore = (Average-AvgSalary)/StdSalary;
+
+select *
+from Zcalc
+order by Zscore DESC;
+
