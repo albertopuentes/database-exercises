@@ -1,4 +1,17 @@
+use florence01;
 
+create temporary table nondupe_employees1 as (
+select dept_emp.emp_no, max(dept_emp.to_date) as max
+from employees.dept_emp
+group by dept_emp.emp_no);
+
+select *
+from nondupe_employees
+
+select dept_emp.emp_no, dept_emp.dept_no, dept_emp.from_date, dept_emp.to_date, dept_emp.to_date = '9999-01-01' as 'is_current_employee'
+from employees.dept_emp
+join nondupe_employees1 on dept_emp.emp_no = nondupe_employees1.emp_no and
+	dept_emp.to_date = nondupe_employees1.max
 
 -- Exercise 2
 
