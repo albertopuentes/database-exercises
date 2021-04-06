@@ -1,3 +1,4 @@
+
 use florence01;
 
 create temporary table nondupe_employees1 as (
